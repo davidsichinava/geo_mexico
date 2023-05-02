@@ -3,7 +3,18 @@ library(tidyverse)
 library(extrafont)
 setwd("D:\\Dropbox (Personal)\\My projects\\scratchpad\\mexico")
 
-mx <- read_excel("BD_Visitantes extranjeros por pa s de Nacionalidad Ene12-Ene23_Sexo_v21.xlsx")
+
+download.file(
+  "https://www.datatur.sectur.gob.mx/Documentos%20compartidos/DatosAbiertos_SIOM_NAC.zip",
+  "mx_data.zip"
+)
+
+
+destfile <- tempfile()
+
+unzip("mx_data.zip")
+
+mx <- read_excel()
 
 loadfonts(device = "win")
 
